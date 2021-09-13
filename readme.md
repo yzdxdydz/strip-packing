@@ -20,5 +20,5 @@ Steinberg algorithm provides height H_1=18.25.
 
 ![Alt text](Figure_3.png?raw=true "RemovingGaps")
 
-For a description and comparison of the given algorithms, see StripPacking.pdf.
+For a description and comparison of the given algorithms, see [StripPacking.pdf](https://github.com/yzsources/StripPacking/blob/main/StripPacking.pdf).
 
