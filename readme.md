@@ -1,4 +1,4 @@
-##Steinberg's algorithm for the Strip Packing Problem with two heuristics
+# Steinberg's algorithm for the Strip Packing Problem with two heuristics
 
 Steinberg's algorithm is an approximation algorithm with approximation ratio 2 (see [A. Steinberg, 1997](https://epubs.siam.org/doi/10.1137/S0097539793255801)). 
 
