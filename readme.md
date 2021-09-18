@@ -1,5 +1,4 @@
 # Steinberg's algorithm for the Strip Packing Problem with two heuristics
-
 Steinberg's algorithm is an approximation algorithm with approximation ratio 2 (see [A. Steinberg, 1997](https://epubs.siam.org/doi/10.1137/S0097539793255801)). 
 
 We also apply two heuristics: ''removing gaps'' and ''dropping rectangles''.
@@ -22,3 +21,4 @@ Steinberg algorithm provides height H_1=18.25.
 
 For a description and comparison of the given algorithms, see [StripPacking.pdf](https://github.com/yzsources/StripPacking/blob/main/StripPacking.pdf).
 
+For an implementation, see [StripPacking](https://github.com/yzsources/StripPacking).
