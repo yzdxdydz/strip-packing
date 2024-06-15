@@ -16,7 +16,7 @@ class SteinbergPacking(StripPacking):
     """
 
     def __init__(self, strip_width: int,
-                 without_gaps=False, dpop_hanging_element=False,
+                 without_gaps=False, drop_hanging_element=False,
                  round_value=6):
         """
         Initialize SteinbergPacking class with a given strip width.
@@ -26,7 +26,7 @@ class SteinbergPacking(StripPacking):
             without_gaps (bool, optional):
                 Whether to remove gaps after packing.
                 Defaults to False.
-            dpop_hanging_element (bool, optional):
+            drop_hanging_element (bool, optional):
                 Whether to drop hanging elements after packing.
                 Defaults to False.
             round_value (int, optional):
@@ -35,7 +35,7 @@ class SteinbergPacking(StripPacking):
         """
         super().__init__(strip_width)
         self.without_gaps = without_gaps
-        self.dpop_hanging_element = dpop_hanging_element
+        self.drop_hanging_element = drop_hanging_element
         self.round_value = round_value
 
     def get_packing(self, elements):
@@ -101,10 +101,10 @@ class SteinbergPacking(StripPacking):
             self.height = None
             print("Steinberg algorithm failed")
 
-        if self.dpop_hanging_element:
-            self.__dpop_hanging_elements()
         if self.without_gaps:
             self.__remove_gaps()
+        if self.drop_hanging_element:
+            self.__drop_hanging_elements()
 
     def __remove_gaps(self):
         """
@@ -167,7 +167,7 @@ class SteinbergPacking(StripPacking):
             for packing_el in components[i][0]
         ]
 
-    def __dpop_hanging_elements(self):
+    def __drop_hanging_elements(self):
         """
         Drop hanging elements from the packing.
 

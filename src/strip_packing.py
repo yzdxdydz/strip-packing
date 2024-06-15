@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from copy import deepcopy
+from matplotlib import patches, pyplot as plt
 
 
 class StripPacking(ABC):
@@ -43,7 +45,6 @@ class StripPacking(ABC):
                 Initializes as None. Expected to be set by
                 the packing algorithm.
         """
-        from copy import deepcopy
         self.width = strip_width
         self.packing = []
         self.height = None
@@ -89,7 +90,7 @@ class StripPacking(ABC):
             colors = ['red', 'blue', 'green', ...]
             file_name = 'packing_result.png'
         """
-        from matplotlib import patches, pyplot as plt
+
         self.packing.sort(key=lambda x: x[1][0])
         self.packing.sort(key=lambda x: x[1][1])
         figure, axis = plt.subplots(1)
