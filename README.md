@@ -1,9 +1,6 @@
 # Steinberg Algorithm for Strip Packing Problem with two heuristics
 
-This project implements the Steinberg algorithm for solving the strip packing problem in Python. 
-(see [A. Steinberg, 1997](https://epubs.siam.org/doi/10.1137/S0097539793255801))
-
-We also provide two heuristics: ''removing gaps'' and ''dropping hanging rectangles''. See documentation and examples. 
+This project implements the Steinberg algorithm for solving the strip packing problem in Python. (see [A. Steinberg, 1997](https://epubs.siam.org/doi/10.1137/S0097539793255801)) We also provide two heuristics: ''removing gaps'' and ''dropping hanging rectangles''. See documentation and examples. 
 
 ## Installation
 
@@ -63,8 +60,7 @@ sp.plot_packing(colors, "figure-3.png")
 ```
 
 9. ''Drop hanging elements'' algorithm provides height H_3=12.0.
-![Alt text](docs/figure_2.png?raw=true "DropAll")
+![Alt text](docs/figure-3.png?raw=true "DropAll")
 
 ## Documentation
-For detailed information on the algorithm and how to use it, please refer to the documentation 
-[strip-packing.pdf](https://github.com/yzdxdydz/strip-packing/blob/main/docs/strip-packing.pdf)
+For detailed information on the algorithm and how to use it, please refer to the documentation [strip-packing.pdf](https://github.com/yzdxdydz/strip-packing/blob/main/docs/strip-packing.pdf)
