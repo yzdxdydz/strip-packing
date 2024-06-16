@@ -1,24 +1,70 @@
-# Steinberg's algorithm for the Strip Packing Problem with two heuristics
-Steinberg's algorithm is an approximation algorithm with approximation ratio 2 (see [A. Steinberg, 1997](https://epubs.siam.org/doi/10.1137/S0097539793255801)). 
+# Steinberg Algorithm for Strip Packing Problem with two heuristics
 
-We also apply two heuristics: ''removing gaps'' and ''dropping rectangles''.
+This project implements the Steinberg algorithm for solving the strip packing problem in Python. 
+(see [A. Steinberg, 1997](https://epubs.siam.org/doi/10.1137/S0097539793255801))
 
-Let us consider a strip of width W=10 and eight rectangles [1, 1], [1, 1], [10, 8], [3, 1], [9, 1], [2, 1], [1, 1], [3, 1]. 
+We also provide two heuristics: ''removing gaps'' and ''dropping hanging rectangles''. See documentation and examples. 
 
-Optimal height H_opt = 10 can be provided with the packing [9, 9], [8, 9], [0, 0], [5, 9], [0, 8], [3, 9], [9, 8], [0, 9].  
+## Installation
 
-Steinberg algorithm provides height H_1=18.25.
+Clone the repository and install the dependencies:
 
-![Alt text](docs/Figure_1.png?raw=true "Steinberg")
+```bash
+git clone https://github.com/yourusername/my_project.git
+cd my_project
+pip install -r requirements.txt
+```
 
-''Removing gaps'' algorithm provides height H_2=13.0. 
+## Usage
+To execute the packing algorithm, follow these steps:
 
-![Alt text](docs/Figure_2.png?raw=true "RemovingGaps")
+1. Import the `SteinbergPacking` class from the `src/steinberg` module.
+```python
+from src.steinberg import SteinbergPacking
+```
+2. Create an instance of the `SteinbergPacking` class with the desired parameters. For example for original algorithm.
+```python
+sp = SteinbergPacking(width=10, without_gaps=False, drop_hanging_element=False)
+```
+3. Call the `get_packing` method, passing in the list of elements to be packed.
+```python
+elements = [[1, 1], [1, 1], [10, 8], [3, 1], [9, 1], [2, 1], [1, 1], [3, 1]]
+#Optimal height H_opt = 10 can be provided with the packing 
+# [9, 9], [8, 9], [0, 0], [5, 9], [0, 8], [3, 9], [9, 8], [0, 9].  
+sp.get_packing(elements)
+```
+4. Plot packing and save it to file.
+```python
+from random import randint
+colors = []
+for _ in elements:
+    colors.append('#%06X' % randint(0, 0xFFFFFF))
+sp.plot_packing(colors, "figure-1.png")
+```
 
-''Dropping rectangles'' algorithm provides height H_3=12.0. 
+5. Then Steinberg algorithm provides height H_1=18.25. The plot is 
+![Alt text](docs/figure-1.png?raw=true "Steinberg")
 
-![Alt text](docs/Figure_3.png?raw=true "RemovingGaps")
+6. For ''Removing gaps'' algorithm,
+```python
+sp = SteinbergPacking(width=10, without_gaps=True, drop_hanging_element=False)
+sp.get_packing(elements)
+sp.plot_packing(colors, "figure-2.png")
+```
 
-For a description and comparison of the given algorithms, see [StripPacking.pdf](https://github.com/yzsources/StripPacking/blob/main/StripPacking.pdf).
+7. ''Removing gaps'' algorithm provides height H_2=13.0.
+![Alt text](docs/figure-2.png?raw=true "Removing gaps")
 
-For an implementation, see [StripPacking](https://github.com/yzsources/StripPacking).
+8. To ''Drop hanging elements'',
+```python
+sp = SteinbergPacking(width=10, without_gaps=True, drop_hanging_element=True)
+sp.get_packing(elements)
+sp.plot_packing(colors, "figure-3.png")
+```
+
+9. ''Drop hanging elements'' algorithm provides height H_3=12.0.
+![Alt text](docs/figure_2.png?raw=true "DropAll")
+
+## Documentation
+For detailed information on the algorithm and how to use it, please refer to the documentation 
+[strip-packing.pdf](https://github.com/yzdxdydz/strip-packing/blob/main/docs/strip-packing.pdf)
