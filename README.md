@@ -30,13 +30,14 @@ elements = [[1, 1], [1, 1], [10, 8], [3, 1], [9, 1], [2, 1], [1, 1], [3, 1]]
 # [9, 9], [8, 9], [0, 0], [5, 9], [0, 8], [3, 9], [9, 8], [0, 9].  
 sp.get_packing(elements)
 ```
-4. Plot packing and save it to file.
+4. Calculate the height, plot the packing and save it to file.
 ```python
 from random import randint
 colors = []
 for _ in elements:
     colors.append('#%06X' % randint(0, 0xFFFFFF))
 sp.plot_packing(colors, "figure-1.png")
+print("Height: ", sp.max_height())
 ```
 
 5. Then Steinberg algorithm provides height H_1=18.25. The plot is 
@@ -47,6 +48,7 @@ sp.plot_packing(colors, "figure-1.png")
 sp = SteinbergPacking(width=10, without_gaps=True, drop_hanging_element=False)
 sp.get_packing(elements)
 sp.plot_packing(colors, "figure-2.png")
+print("Height: ", sp.max_height())
 ```
 
 7. ''Removing gaps'' algorithm provides height H_2=13.0.
@@ -57,6 +59,7 @@ sp.plot_packing(colors, "figure-2.png")
 sp = SteinbergPacking(width=10, without_gaps=True, drop_hanging_element=True)
 sp.get_packing(elements)
 sp.plot_packing(colors, "figure-3.png")
+print("Height: ", sp.max_height())
 ```
 
 9. ''Drop hanging elements'' algorithm provides height H_3=12.0.
