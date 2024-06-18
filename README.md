@@ -66,4 +66,4 @@ print("Height: ", sp.max_height())
 ![Alt text](examples/dropped-7.png?raw=true "DropAll")
 
 ## Documentation
-For detailed information on the algorithm and how to use it, please refer to the documentation [strip-packing.pdf](https://github.com/yzdxdydz/strip-packing/blob/main/docs/strip-packing.pdf)
+For detailed information on the algorithm, please refer to the documentation [strip-packing.pdf](https://github.com/yzdxdydz/strip-packing/blob/main/docs/strip-packing.pdf)
