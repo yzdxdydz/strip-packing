@@ -40,7 +40,7 @@ sp.plot_packing(colors, "figure-1.png")
 ```
 
 5. Then Steinberg algorithm provides height H_1=18.25. The plot is 
-![Alt text](docs/figure-1.png?raw=true "Steinberg")
+![Alt text](examples/original-7.png?raw=true "Steinberg")
 
 6. For ''Removing gaps'' algorithm,
 ```python
@@ -50,7 +50,7 @@ sp.plot_packing(colors, "figure-2.png")
 ```
 
 7. ''Removing gaps'' algorithm provides height H_2=13.0.
-![Alt text](docs/figure-2.png?raw=true "Removing gaps")
+![Alt text](examples/no-gaps-7.png?raw=true "Removing gaps")
 
 8. To ''Drop hanging elements'',
 ```python
@@ -60,7 +60,7 @@ sp.plot_packing(colors, "figure-3.png")
 ```
 
 9. ''Drop hanging elements'' algorithm provides height H_3=12.0.
-![Alt text](docs/figure-3.png?raw=true "DropAll")
+![Alt text](examples/dropped-7.png?raw=true "DropAll")
 
 ## Documentation
 For detailed information on the algorithm and how to use it, please refer to the documentation [strip-packing.pdf](https://github.com/yzdxdydz/strip-packing/blob/main/docs/strip-packing.pdf)
