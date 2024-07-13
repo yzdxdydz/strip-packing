@@ -7,8 +7,8 @@ This project implements the Steinberg algorithm for solving the strip packing pr
 Clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/yourusername/my_project.git
-cd my_project
+git clone https://github.com/yzdxdydz/strip-packing.git
+cd strip-packing
 pip install -r requirements.txt
 ```
 
